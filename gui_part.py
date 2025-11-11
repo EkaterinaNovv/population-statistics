@@ -17,3 +17,6 @@ class PopulationApp(tk.Tk):
         # Кнопка для построения графика
         self.plot_button = tk.Button(self, text="Построить график", command=self.plot_data)
         self.plot_button.pack(pady=10)
+        # Таблица для отображения данных
+        self.tree = ttk.Treeview(self)
+        self.tree.pack(expand=True, fill='both')
