@@ -10,3 +10,10 @@ class PopulationApp(tk.Tk):
         self.title("Статистика населения России")
         self.geometry("900x600")
         self.data = None
+        # Кнопка загрузки файла
+        self.load_button = tk.Button(self, text="Открыть файл с данными", command=self.load_file)
+        self.load_button.pack(pady=10)
+
+        # Кнопка для построения графика
+        self.plot_button = tk.Button(self, text="Построить график", command=self.plot_data)
+        self.plot_button.pack(pady=10)
