@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
-from population_data import PopulationData  
+from population_data import PopulationData 
 
 class PopulationApp(tk.Tk):
     """Основное приложение с графическим интерфейсом"""
@@ -32,3 +32,19 @@ class PopulationApp(tk.Tk):
                 messagebox.showinfo("Успех", f"Файл {filepath} загружен")
             except Exception as e:
                 messagebox.showerror("Ошибка", str(e))
+
+    def show_table(self):
+        # Очистка старой таблицы
+        for i in self.tree.get_children():
+            self.tree.delete(i)
+
+        # Настройка колонок
+        self.tree["columns"] = list(self.data.data.columns)
+        self.tree["show"] = "headings"
+        for col in self.data.data.columns:
+            self.tree.heading(col, text=col)
+            self.tree.column(col, width=100)
+
+        # Добавление данных
+        for _, row in self.data.data.iterrows():
+            self.tree.insert("", "end", values=list(row))
