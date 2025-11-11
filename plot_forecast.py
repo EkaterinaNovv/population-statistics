@@ -9,4 +9,8 @@ class PopulationAppWithPlot(PopulationApp):
             messagebox.showwarning("Внимание", "Сначала загрузите файл с данными!")
             return
 
+        fig, ax = plt.subplots(figsize=(8, 5))
+        ax.plot(self.data.data['Год'], self.data.data['Население'], marker='o', label='Фактическое население')
+
+
     pass
