@@ -5,3 +5,5 @@ class PopulationData:
         self.filepath = filepath
         self.data = pd.read_csv(filepath)
         self.data['Прирост, %'] = self.data['Население'].pct_change() * 100
+    def max_growth(self):
+        return self.data['Прирост, %'].max()
