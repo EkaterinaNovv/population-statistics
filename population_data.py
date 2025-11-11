@@ -7,3 +7,5 @@ class PopulationData:
         self.data['Прирост, %'] = self.data['Население'].pct_change() * 100
     def max_growth(self):
         return self.data['Прирост, %'].max()
+    def max_decline(self):
+        return self.data['Прирост, %'].min()
