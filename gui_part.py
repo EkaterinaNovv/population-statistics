@@ -3,5 +3,5 @@ from tkinter import filedialog, messagebox, ttk
 from population_data import PopulationData  # импорт класса Екатерины
 
 class PopulationApp(tk.Tk):
-    """Основное приложение с графическим интерфейсом"""
+
     pass
